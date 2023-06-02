@@ -3,15 +3,14 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main5 {
+public class Main6 {
     public static void main(String[] args) {
 
         List<Factura> lista = new ArrayList<Factura>();
         lista.add(new Factura(3, "ordenador", 200));
         lista.add(new Factura(2, "tablet", 300));
         lista.add(new Factura(1, "auricular", 50));
-
-        List<Factura> filtrada= buscarFacturas(new FacturaImporteFilter(200), lista);
+        List<Factura> filtrada= buscarFacturas(f-> f.getImporte()>=200, lista);
         //List<Factura> filtrada= buscarFacturas(new FacturaConceptoFilter("ordenador"), lista);
         for (Factura f: filtrada) {
             System.out.println(f.getNumero());

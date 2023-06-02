@@ -6,9 +6,8 @@ public class FacturaConceptoFilter implements  FacturaFilter{
     public FacturaConceptoFilter(String concepto) {
         this.concepto = concepto;
     }
-
     @Override
-    public boolean filter(Factura f) {
+    public boolean test(Factura f) {
 
       return  f.getConcepto().equals(concepto);
     }
