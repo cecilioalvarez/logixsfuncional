@@ -21,7 +21,7 @@ public class Main5 {
         }
 
     }
-    public static List<Factura> buscarFacturas(FacturaFilter filter, List<Factura> lista) {
+    public static List<Factura> buscarFacturas(Filter filter, List<Factura> lista) {
         List<Factura> listaFinal = new ArrayList<Factura>();
 
         for (Factura f: lista) {

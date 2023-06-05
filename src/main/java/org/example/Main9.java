@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main7 {
+public class Main9 {
     public static void main(String[] args) {
 
         List<Factura> lista = new ArrayList<Factura>();
@@ -12,11 +12,11 @@ public class Main7 {
         lista.add(new Factura(1, "auricular", 50));
         //la hemos referenciado con una varialbe
         Filter lambda1= f->f.getConcepto().equals("ordenador");
-        Filter lambda2= f->f.getConcepto().equals("auricular");
-        Filter lambdaCombinado= lambda1.or(lambda2);
+        Filter lambda2= f->f.getImporte()==200;
+       Filter combinado= Filter.combine(lambda1,lambda2);
 
 
-        List<Factura> filtrada= buscarFacturas(lambdaCombinado, lista);
+        List<Factura> filtrada= buscarFacturas(combinado, lista);
         //List<Factura> filtrada= buscarFacturas(new FacturaConceptoFilter("ordenador"), lista);
         for (Factura f: filtrada) {
             System.out.println(f.getNumero());

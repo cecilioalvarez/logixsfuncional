@@ -1,6 +1,6 @@
 package org.example;
 
-public class FacturaConceptoFilter implements  FacturaFilter{
+public class FacturaConceptoFilter implements Filter {
    private String concepto;
 
     public FacturaConceptoFilter(String concepto) {
