@@ -11,8 +11,8 @@ public class Main9 {
         lista.add(new Factura(2, "tablet", 300));
         lista.add(new Factura(1, "auricular", 50));
         //la hemos referenciado con una varialbe
-        Filter lambda1= f->f.getConcepto().equals("ordenador");
-        Filter lambda2= f->f.getImporte()==200;
+        Filter<Factura> lambda1= f->f.getConcepto().equals("ordenador");
+        Filter<Factura> lambda2= f->f.getImporte()==200;
        Filter combinado= Filter.combine(lambda1,lambda2);
 
 

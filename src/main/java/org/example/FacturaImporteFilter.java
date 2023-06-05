@@ -1,6 +1,6 @@
 package org.example;
 
-public class FacturaImporteFilter implements Filter {
+public class FacturaImporteFilter implements Filter<Factura> {
 
     private double importe;
 
