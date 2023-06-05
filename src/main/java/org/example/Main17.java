@@ -2,11 +2,10 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
-import static java.util.stream.Collectors.toList;
-
-public class Main16 {
+public class Main17 {
     public static void main(String[] args) {
 
         List<Factura> lista = new ArrayList<Factura>();
@@ -20,7 +19,14 @@ public class Main16 {
 
         Stream<Factura> flujo= lista.stream();
 
-        flujo.skip(2).limit(2).forEach(System.out::println);
+        Optional<Factura> factura=flujo.filter(f->f.getImporte()>800).findFirst();
+
+        if (factura.isPresent()) {
+
+            System.out.println(factura.get().getImporte());
+        }else {
+            System.out.println("no hay");
+        }
     }
 
 
