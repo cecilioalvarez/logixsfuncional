@@ -57,4 +57,17 @@ public class Factura implements Comparable<Factura>{
      else return 0;
 
     }
+
+    @Override
+    public String toString() {
+        return "Factura{" +
+                "numero=" + numero +
+                ", concepto='" + concepto + '\'' +
+                ", importe=" + importe +
+                '}';
+    }
+    public double getImporteConIVA() {
+
+        return this.getImporte()*1.21;
+    }
 }
